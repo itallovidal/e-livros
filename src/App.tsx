@@ -1,14 +1,11 @@
 import {globalStyles} from "./styles/theme.ts";
-
-import ProfileButton from "./components/profileButton.tsx";
-import profilePicture from './assets/profilePicturePlaceholder.jpg'
-
+import Home from "./pages/home.tsx"
 
 function App() {
   globalStyles()
 
   return (
-      <ProfileButton profilePicture={profilePicture} name={'George'}/>
+      <Home/>
   )
 }
 

@@ -8,7 +8,8 @@ export const ProfileButtonContainer = styled('div', {
     alignItems: 'center',
 
     img: {
-        maxWidth: '3.125rem',
+        height: '3.125rem',
+        width: '3.125rem',
         borderRadius: '50%'
     },
     button:{
