@@ -1,0 +1,35 @@
+import {styled} from './theme.ts'
+
+export const CardContainer = styled('div', {
+    display: 'flex',
+    flexDirection: 'column',
+    alignItems: 'center',
+    maxWidth: '21rem',
+    position:'relative',
+
+    '> button':{
+        position: 'absolute',
+        right: 0,
+        top: 0
+    },
+
+    img:{
+        maxWidth: '100%',
+    },
+
+    label: {
+        padding: '1.5rem',
+        width: '100%',
+        background: 'white',
+        textAlign: 'center'
+    },
+
+    div:{
+        display: 'flex',
+        width: '100%',
+
+        'button:first-child':{
+            flex: 1
+        },
+    }
+})
