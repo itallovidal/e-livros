@@ -1,7 +1,7 @@
 import {styled} from './theme.ts'
 
 export const Button = styled('button', {
-    borderRadius: '4px',
+    borderRadius: '6px',
     padding: '.8rem 1rem',
     color: 'white',
     border: 'none',

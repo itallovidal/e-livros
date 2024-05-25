@@ -6,6 +6,14 @@ export const CardContainer = styled('div', {
     alignItems: 'center',
     maxWidth: '21rem',
     position:'relative',
+    transition: '500ms',
+    boxShadow: '0px 0px 0px #D8D5D5',
+    borderRadius: '6px',
+
+    '&:hover': {
+        boxShadow: '5px 5px 10px #D8D5D5',
+        cursor: 'pointer'
+    },
 
     '> button':{
         position: 'absolute',

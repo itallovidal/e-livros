@@ -3,7 +3,8 @@ import bookPlaceholderImage from "../assets/bookPlaceholderImage.png"
 import bookPlaceholder2 from "../assets/bookPlaceholder2.jpg"
 import {SearchInput} from "../components/searchInput.tsx";
 import ProfileButton from "../components/profileButton.tsx";
-import {CategoryContainer, Header, Main, Link, Section, Footer} from "../styles/home/homeStyle.ts";
+import { Header, Main, Link, Section, Footer} from "../styles/home/homeStyle.ts";
+import {Categories} from "../components/home/categoryContainer.tsx";
 
 function Home() {
     return (
@@ -13,22 +14,8 @@ function Home() {
                 <ProfileButton name={"george"} profilePicture={bookPlaceholder2}/>
             </Header>
             <Main>
-                <CategoryContainer>
-                    <h1>Categorias</h1>
-                    <Link>Architecture</Link>
-                    <Link>Art History</Link>
-                    <Link>Graphic Design</Link>
-                    <Link>Fantasy</Link>
-                    <Link>Magic</Link>
-                    <Link>Computer Science</Link>
-                    <Link>Brazil</Link>
-                    <Link>Finance</Link>
-                    <Link>Horror</Link>
-                    <Link>Humor</Link>
-                    <Link>Exercise</Link>
-                    <Link>Cooking</Link>
-                </CategoryContainer>
                 <Section>
+                    <Categories/>
                     <Card imageSource={bookPlaceholderImage} title={"livro1"}/>
                     <Card imageSource={bookPlaceholderImage} title={"livro1"}/>
                     <Card imageSource={bookPlaceholderImage} title={"livro1"}/>

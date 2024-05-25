@@ -2,7 +2,7 @@ import {styled} from "./theme.ts";
 
 export const Input = styled('input', {
     borderRadius: '4px',
-    padding: '.8rem 1rem',
+    padding: '0rem 1rem',
     border: 'none',
     outline: 'none',
     display: 'flex',
@@ -10,7 +10,6 @@ export const Input = styled('input', {
     alignItems: 'center',
     gap: '5px',
     flex: 1
-
 })
 
 export const InputContainer = styled('div', {
@@ -18,8 +17,9 @@ export const InputContainer = styled('div', {
     justifyContent: 'space-between',
     alignItems: 'center',
     background: 'white',
-    padding: '.7rem',
+    padding: '.1rem .5rem',
     maxWidth: '28.875rem',
+    width: '100%',
     boxShadow: '0px 5px 2px #D8D5D5',
     borderRadius: '8px'
 })
