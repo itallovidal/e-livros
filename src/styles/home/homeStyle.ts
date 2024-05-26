@@ -31,17 +31,19 @@ export const CategoryContainer = styled('div', {
     display: 'flex',
     flexDirection: 'column',
     gap: '1rem',
-    position: 'fixed',
+    position: 'absolute',
     left: '0',
     top: '0',
     zIndex: 10,
     transform: 'translateX(-110%)',
     margin: '0 auto',
-})
 
-export const Link = styled('a', {
-    textAlign: 'right',
-    cursor: 'pointer'
+    a:{
+        textAlign: 'right',
+        cursor: 'pointer',
+        textDecoration: 'none',
+        color: '$colorOne'
+    }
 })
 
 export const Footer = styled('footer', {

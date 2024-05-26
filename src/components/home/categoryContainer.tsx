@@ -1,21 +1,13 @@
-import {CategoryContainer, Link} from "../../styles/home/homeStyle.ts";
+import {CategoryContainer} from "../../styles/home/homeStyle.ts";
+import {Link} from "react-router-dom";
+
+export const categories = ['Architecture', 'Art History', 'Graphic Design', 'Fantasy', 'Magic', 'Computer Science', 'Brazil', 'Finance', 'Horror', 'Humor', 'Exercise', 'Cooking']
 
 export function Categories() {
     return (
         <CategoryContainer>
             <h1>Categories</h1>
-            <Link>Architecture</Link>
-            <Link>Art History</Link>
-            <Link>Graphic Design</Link>
-            <Link>Fantasy</Link>
-            <Link>Magic</Link>
-            <Link>Computer Science</Link>
-            <Link>Brazil</Link>
-            <Link>Finance</Link>
-            <Link>Horror</Link>
-            <Link>Humor</Link>
-            <Link>Exercise</Link>
-            <Link>Cooking</Link>
+                {categories.map((category)=><Link to={`/${category}`}>{category}</Link>)}
         </CategoryContainer>
     );
 }
