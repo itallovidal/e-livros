@@ -38,7 +38,7 @@ export const CategoryContainer = styled('div', {
     transform: 'translateX(-110%)',
     margin: '0 auto',
 
-    a:{
+    'a, h1':{
         textAlign: 'right',
         cursor: 'pointer',
         textDecoration: 'none',
