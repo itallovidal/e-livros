@@ -4,6 +4,7 @@ import { BrowserRouter, Route, Routes } from 'react-router-dom'
 import NotFoundPage from './pages/NotFoundPage.tsx'
 import About from './pages/about.tsx'
 import Login from './pages/login.tsx'
+import { Signup } from './pages/signup.tsx'
 
 function App() {
   globalStyles()
@@ -14,6 +15,7 @@ function App() {
         <Route path={'/:category'} element={<Home />} />
         <Route path={'/about/:id/book?/'} element={<About />} />
         <Route path={'/login'} element={<Login />} />
+        <Route path={'/signup'} element={<Signup />} />
         <Route path={'*'} element={<NotFoundPage />} />
       </Routes>
     </BrowserRouter>

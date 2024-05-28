@@ -5,29 +5,35 @@ import { Form } from '../styles/formStyles.ts'
 import { Button } from '../components/Button.tsx'
 import FormFooter from '../components/formFooter.tsx'
 
-function Login() {
+export function Signup() {
   return (
     <main>
-      <FormHeader title={'Login'} subtitle={'Boook, favorite, discover!'} />
+      <FormHeader
+        title={'SignUp'}
+        subtitle={'In a few steps you are in the club!'}
+      />
 
       <Form>
         <FormInput placeholder={'name'} icon={<User size={24} />} />
+        <FormInput placeholder={'email'} icon={<Lock size={24} />} />
         <FormInput placeholder={'password'} icon={<Lock size={24} />} />
+        <FormInput
+          placeholder={'password confirmation'}
+          icon={<Lock size={24} />}
+        />
 
         <Button css={{ maxWidth: '18rem', width: '100%' }} variant={'blue'}>
-          login
+          sign up
         </Button>
       </Form>
 
       <div className={'divider'}></div>
 
       <FormFooter
-        title={'Does not have an account?'}
-        buttonText={'signIn'}
-        goTo={'/signup'}
+        title={'Already signed in?'}
+        buttonText={'login'}
+        goTo={'/login'}
       />
     </main>
   )
 }
-
-export default Login
