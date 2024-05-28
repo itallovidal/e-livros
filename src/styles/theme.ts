@@ -18,6 +18,15 @@ export const globalStyles = globalCss({
     fontFamily: 'Roboto, sans-serif',
   },
 
+  '.divider': {
+    display: 'block',
+    width: '5rem',
+    height: '.2rem',
+    background: '$colorOne',
+    margin: '0 auto',
+    marginBlock: '1rem',
+  },
+
   body: {
     background: '$colorTwo',
   },
