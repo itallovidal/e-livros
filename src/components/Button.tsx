@@ -1,15 +1,16 @@
-import {Button as StyledButton } from "../styles/button.ts";
-import {ReactNode} from "react";
+import { Button as StyledButton } from '../styles/button.ts'
+import { ReactNode } from 'react'
+import type * as Stitches from '@stitches/react'
 
-interface ButtonProps {
-    type: 'blue' | 'gray' | 'transparent',
-    children: ReactNode,
+interface IButtonProps extends Stitches.ComponentProps<typeof StyledButton> {
+  variant: 'blue' | 'gray' | 'transparent' | 'white'
+  children: ReactNode
 }
 
-export function Button({children, type, } : ButtonProps){
-    return (
-            <StyledButton color={type}>
-                {children}
-            </StyledButton>
-    )
+export function Button({ children, variant, ...props }: IButtonProps) {
+  return (
+    <StyledButton {...props} color={variant}>
+      {children}
+    </StyledButton>
+  )
 }
