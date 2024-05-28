@@ -48,4 +48,7 @@ export const CategoryContainer = styled('div', {
 
 export const Footer = styled('footer', {
   margin: '2rem auto',
+  display: 'flex',
+  flexWrap: 'wrap',
+  gap: '1rem',
 })

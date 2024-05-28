@@ -14,14 +14,16 @@ export const categories = [
   'Humor',
   'Exercise',
   'Cooking',
-]
+] as const
+
+export type ICategories = typeof categories
 
 export function Categories() {
   return (
     <CategoryContainer>
       <h1>Categories</h1>
       {categories.map((category) => (
-        <Link to={`/${category}`}>{category}</Link>
+        <Link key={category} to={`/${category.toLowerCase()}?offset=1`}>{category}</Link>
       ))}
     </CategoryContainer>
   )
