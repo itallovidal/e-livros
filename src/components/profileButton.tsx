@@ -6,11 +6,9 @@ interface ProfileButtonProps {
   profilePicture: string
 }
 
-function ProfileButton({ name, profilePicture }: ProfileButtonProps) {
+function ProfileButton({ name }: ProfileButtonProps) {
   return (
     <ProfileButtonContainer>
-      <img src={profilePicture} alt="" />
-
       <Button variant={'transparent'}>
         <span>{name}</span>
         <span> Ver Perfil </span>

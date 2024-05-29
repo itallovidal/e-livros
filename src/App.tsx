@@ -13,7 +13,7 @@ function App() {
     <BrowserRouter>
       <Routes>
         <Route path={'/:category'} element={<Home />} />
-        <Route path={'/about/:id/book?/'} element={<About />} />
+        <Route path={'/:category/about/:id/'} element={<About />} />
         <Route path={'/login'} element={<Login />} />
         <Route path={'/signup'} element={<Signup />} />
         <Route path={'*'} element={<NotFoundPage />} />

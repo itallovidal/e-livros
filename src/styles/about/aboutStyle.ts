@@ -28,6 +28,7 @@ export const Section = styled('section', {
     alignItems: 'center',
     display: 'flex',
     gap: '1rem',
+    marginTop: '1.5rem',
   },
 })
 
@@ -37,11 +38,12 @@ export const DivImgContainer = styled('div', {
 
   img: {
     marginRight: '1rem',
+    borderRadius: '10px',
   },
 
   p: {
-    marginTop: '1.5rem',
     lineHeight: '1.6rem',
     width: '70%',
+    marginTop: '1.5rem',
   },
 })

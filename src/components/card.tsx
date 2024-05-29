@@ -7,7 +7,9 @@ import bookPlaceholderImage from '../assets/404.png'
 import { IBook } from '../interfaces.ts'
 import { useEffect, useState } from 'react'
 interface CardProps {
-  book: IBook
+  book: IBook & {
+    category: string
+  }
 }
 
 export function Card({ book }: CardProps) {
@@ -15,8 +17,6 @@ export function Card({ book }: CardProps) {
   const [cover, setCover] = useState(bookPlaceholderImage)
 
   async function fetchCover() {
-    console.log(book.cover_id)
-
     if (book.cover_id != null) {
       const dados = await fetch(
         `https://covers.openlibrary.org/b/id/${book.cover_id}-L.jpg`,
@@ -24,9 +24,7 @@ export function Card({ book }: CardProps) {
           method: 'GET',
         },
       )
-
       const img = await dados.blob()
-
       setCover(URL.createObjectURL(img))
     }
   }
@@ -46,7 +44,16 @@ export function Card({ book }: CardProps) {
         <Button onClick={() => navigate('/about/id/booked')} variant={'blue'}>
           Book
         </Button>
-        <Button onClick={() => navigate('/about/id')} variant={'gray'}>
+        <Button
+          onClick={() =>
+            navigate(`/${book.category}/about/${book.key.substring(7)}`, {
+              state: {
+                cover,
+              },
+            })
+          }
+          variant={'gray'}
+        >
           <Plus size={32} />
         </Button>
       </div>

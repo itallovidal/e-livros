@@ -8,7 +8,8 @@ export const CardContainer = styled('div', {
   position: 'relative',
   transition: '500ms',
   boxShadow: '0px 0px 0px #D8D5D5',
-  borderRadius: '6px',
+  borderRadius: '10px',
+  overflow: 'hidden',
 
   '&:hover': {
     boxShadow: '5px 5px 10px #D8D5D5',
@@ -16,8 +17,8 @@ export const CardContainer = styled('div', {
 
   '> button': {
     position: 'absolute',
-    right: 0,
-    top: 0,
+    right: '-2px',
+    top: '-2px',
   },
 
   img: {

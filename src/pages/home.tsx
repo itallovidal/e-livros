@@ -7,36 +7,27 @@ import { Categories } from '../components/home/categoryContainer.tsx'
 import { Link, useLocation } from 'react-router-dom'
 import { useEffect, useState } from 'react'
 import { IBookData } from '../interfaces.ts'
+import { fetchBooks } from '../utils/fetchBooks.ts'
 function Home() {
   const [booksData, setBooks] = useState<IBookData>({} as IBookData)
   const pages = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
   const params = useLocation()
-  console.log(params)
 
-  async function fetchBooks(category: string, offset: number) {
-    if (category.includes('%20')) {
-      category = category.replace('%20', '_')
-    }
+  async function fetchBooksData() {
+    const category = params.pathname.slice(1).toLowerCase()
+    const offset = params.search.slice(8)
 
-    const URL = `https://openlibrary.org/subjects/${category}.json?offset=${offset}`
-    console.log(URL)
+    const books = await fetchBooks(category, Number(offset))
 
-    const dados = await fetch(URL, {
-      method: 'GET',
-    })
-    const dadosConvertidos = await dados.json()
-    console.log(dadosConvertidos)
     setBooks({
-      books_count: dadosConvertidos.work_count,
-      books: [...dadosConvertidos.works],
+      books_count: books.work_count,
+      books: [...books.works],
+      category,
     })
   }
 
   useEffect(() => {
-    const category = params.pathname.slice(1).toLowerCase()
-    const offset = params.search.slice(8)
-
-    fetchBooks(category, Number(offset))
+    fetchBooksData()
   }, [params])
 
   return (
@@ -49,11 +40,22 @@ function Home() {
         <Section>
           <Categories />
           {booksData.books_count &&
-            booksData?.books.map((book, i) => <Card key={i} book={book} />)}
+            booksData?.books.map((book, i) => (
+              <Card
+                key={i}
+                book={{
+                  ...book,
+                  category: booksData.category,
+                }}
+              />
+            ))}
         </Section>
         <Footer>
           {pages.map((page) => (
-            <Link key={page} to={`/categoria?offset=${page}`}>
+            <Link
+              key={page}
+              to={`/${booksData.category}?offset=${page * 12 - 12}`}
+            >
               {page}
             </Link>
           ))}
