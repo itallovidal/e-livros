@@ -1,5 +1,6 @@
 // styles/index.ts
 import { createStitches, globalCss } from '@stitches/react'
+import { showing } from './animations.ts'
 
 export const { styled } = createStitches({
   theme: {
@@ -16,6 +17,11 @@ export const globalStyles = globalCss({
     padding: 0,
     margin: 0,
     fontFamily: 'Roboto, sans-serif',
+  },
+
+  main: {
+    opacity: 0,
+    animation: `${showing} 1000ms forwards`,
   },
 
   '.divider': {

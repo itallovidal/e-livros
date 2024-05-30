@@ -7,7 +7,6 @@ export async function fetchBooks(
     category = category.replace('%20', '_')
   }
 
-
   const URL = `https://openlibrary.org/subjects/${category}.json?offset=${offset}&limit=${limit || 12}`
   console.log(URL)
 

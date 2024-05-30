@@ -39,6 +39,7 @@ export function SuggestionSection({ name }: ICardSection) {
           {booksData.books_count &&
             booksData?.books.map((book, i) => (
               <Card
+                delay={i}
                 key={i}
                 book={{
                   ...book,

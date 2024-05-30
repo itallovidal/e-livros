@@ -23,7 +23,9 @@ export function Categories() {
     <CategoryContainer>
       <h1>Categories</h1>
       {categories.map((category) => (
-        <Link key={category} to={`/${category.toLowerCase()}?offset=1`}>{category}</Link>
+        <Link key={category} to={`/${category.toLowerCase()}?offset=1`}>
+          {category}
+        </Link>
       ))}
     </CategoryContainer>
   )

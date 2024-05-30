@@ -20,7 +20,7 @@ export const Section = styled('section', {
   display: 'flex',
   position: 'relative',
   alignItems: 'center',
-  maxWidth: 'calc((21rem * 3) + 2rem)',
+  width: 'calc((21rem * 3) + 2rem)',
   margin: '2rem auto',
   flexWrap: 'wrap',
   gap: '1rem',
@@ -46,7 +46,7 @@ export const CategoryContainer = styled('div', {
   },
 })
 
-export const Footer = styled('footer', {
+export const FooterContainer = styled('footer', {
   margin: '2rem auto',
   display: 'flex',
   flexWrap: 'wrap',

@@ -3,18 +3,20 @@ import { Heart, Plus } from 'phosphor-react'
 
 import { CardContainer } from '../styles/CardStyle.ts'
 import { useNavigate } from 'react-router-dom'
-import bookPlaceholderImage from '../assets/404.png'
 import { IBook } from '../interfaces.ts'
 import { useEffect, useState } from 'react'
+import Loading from './loading.tsx'
+
 interface CardProps {
   book: IBook & {
     category: string
   }
+  delay: number
 }
 
-export function Card({ book }: CardProps) {
+export function Card({ book, delay }: CardProps) {
   const navigate = useNavigate()
-  const [cover, setCover] = useState(bookPlaceholderImage)
+  const [cover, setCover] = useState<false | string>(false)
 
   async function fetchCover() {
     if (book.cover_id != null) {
@@ -34,11 +36,13 @@ export function Card({ book }: CardProps) {
   }, [book])
 
   return (
-    <CardContainer>
+    <CardContainer css={{ '--delay': `${(delay + 1) * 100}ms` }}>
       <Button variant={'gray'}>
         <Heart size={32} />
       </Button>
-      <img alt={'Imagem de livro'} src={cover} />
+      {cover && <img alt={'Imagem de livro'} src={cover} />}
+      {!cover && <Loading />}
+
       <label htmlFor="">{book.title}</label>
       <div>
         <Button onClick={() => navigate('/about/id/booked')} variant={'blue'}>

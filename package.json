@@ -12,14 +12,17 @@
   "dependencies": {
     "@stitches/react": "^1.2.8",
     "phosphor-react": "^1.4.1",
+    "prop-types": "^15.8.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
+    "react-lottie": "^1.2.4",
     "react-router-dom": "^6.23.1"
   },
   "devDependencies": {
     "@rocketseat/eslint-config": "^2.2.2",
     "@types/react": "^18.2.66",
     "@types/react-dom": "^18.2.22",
+    "@types/react-lottie": "^1.2.10",
     "@typescript-eslint/eslint-plugin": "^7.2.0",
     "@typescript-eslint/parser": "^7.2.0",
     "@vitejs/plugin-react": "^4.2.1",

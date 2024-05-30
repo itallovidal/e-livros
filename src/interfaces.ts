@@ -1,4 +1,3 @@
-
 export interface IAuthor {
   key: string
   name: string

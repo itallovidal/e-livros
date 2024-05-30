@@ -12,6 +12,7 @@ import { SuggestionSection } from '../components/suggestionSection.tsx'
 import { useLocation, useNavigate, useParams } from 'react-router-dom'
 import { useEffect, useState } from 'react'
 import { IAboutBook } from '../interfaces.ts'
+import Loading from '../components/loading.tsx'
 
 function About() {
   const navigation = useNavigate()
@@ -26,7 +27,6 @@ function About() {
       method: 'GET',
     })
     const dadosConvertidos = await dados.json()
-    console.log(dadosConvertidos)
 
     if (!dadosConvertidos.description) {
       setBook({
@@ -65,28 +65,34 @@ function About() {
       <Main>
         <Section>
           <DivImgContainer>
-            <img alt={'book'} src={state.cover} />
-            <div>
-              <h1>{book.title}</h1>
-              <p>{book.description}</p>
-              {book.first_publish_date && (
-                <p>Release Date: {book.first_publish_date}</p>
-              )}
+            {book.title && (
+              <>
+                <img alt={'book'} src={state.cover} />
+                <div>
+                  <h1>{book.title}</h1>
+                  <p>{book.description}</p>
+                  {book.first_publish_date && (
+                    <p>Release Date: {book.first_publish_date}</p>
+                  )}
 
-              <div className={'container_btns'}>
-                <Button variant={'blue'}>
-                  Reservar
-                  <BookBookmark size={32} />
-                </Button>
-                <Button variant={'white'}>
-                  <Heart size={32} />
-                </Button>
-                <Button variant={'white'}>
-                  Lido
-                  <Check size={32} />
-                </Button>
-              </div>
-            </div>
+                  <div className={'container_btns'}>
+                    <Button variant={'blue'}>
+                      Reservar
+                      <BookBookmark size={32} />
+                    </Button>
+                    <Button variant={'white'}>
+                      <Heart size={32} />
+                    </Button>
+                    <Button variant={'white'}>
+                      Lido
+                      <Check size={32} />
+                    </Button>
+                  </div>
+                </div>
+              </>
+            )}
+            {!book.description && <Loading />}
+
           </DivImgContainer>
         </Section>
         <SuggestionSection name={'Você Pode Gostar'} />
