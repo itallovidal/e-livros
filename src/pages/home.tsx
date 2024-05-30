@@ -1,5 +1,4 @@
 import { Card } from '../components/card.tsx'
-import bookPlaceholder2 from '../assets/bookPlaceholder2.jpg'
 import { SearchInput } from '../components/searchInput.tsx'
 import ProfileButton from '../components/profileButton.tsx'
 import { Header, Main, Section } from '../styles/home/homeStyle.ts'
@@ -38,7 +37,7 @@ function Home() {
     <>
       <Header>
         <SearchInput />
-        <ProfileButton name={'george'} profilePicture={bookPlaceholder2} />
+        <ProfileButton name={'george'} />
       </Header>
       <Main>
         <Section>

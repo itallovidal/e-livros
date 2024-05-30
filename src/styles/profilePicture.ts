@@ -7,11 +7,6 @@ export const ProfileButtonContainer = styled('div', {
   justifyContent: 'center',
   alignItems: 'center',
 
-  img: {
-    height: '3.125rem',
-    width: '3.125rem',
-    borderRadius: '50%',
-  },
   button: {
     alignItems: 'flex-start',
     flexDirection: 'column',

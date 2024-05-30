@@ -5,17 +5,15 @@ import {
   Section,
 } from '../styles/about/aboutStyle.ts'
 import ProfileButton from '../components/profileButton.tsx'
-import bookPlaceholderImage from '../assets/bookPlaceholderImage.png'
 import { Button } from '../components/Button.tsx'
 import { BookBookmark, CaretLeft, Check, Heart } from 'phosphor-react'
 import { SuggestionSection } from '../components/suggestionSection.tsx'
-import { useLocation, useNavigate, useParams } from 'react-router-dom'
+import { useLocation, useParams } from 'react-router-dom'
 import { useEffect, useState } from 'react'
 import { IAboutBook } from '../interfaces.ts'
 import Loading from '../components/loading.tsx'
 
 function About() {
-  const navigation = useNavigate()
   const { id } = useParams() as { id: string }
   const { state } = useLocation()
   const [book, setBook] = useState<IAboutBook>({} as IAboutBook)
@@ -51,16 +49,17 @@ function About() {
     fetchAboutBook()
   }, [id])
 
+  function BackPage() {
+    window.history.back()
+  }
+
   return (
     <>
       <Header>
-        <Button
-          onClick={() => navigation('/history?offset=1')}
-          variant={'transparent'}
-        >
+        <Button onClick={BackPage} variant={'transparent'}>
           <CaretLeft size={32} />
         </Button>
-        <ProfileButton name={'george'} profilePicture={bookPlaceholderImage} />
+        <ProfileButton name={'george'} />
       </Header>
       <Main>
         <Section>
@@ -92,7 +91,6 @@ function About() {
               </>
             )}
             {!book.description && <Loading />}
-
           </DivImgContainer>
         </Section>
         <SuggestionSection name={'Você Pode Gostar'} />

@@ -38,11 +38,20 @@ export const CategoryContainer = styled('div', {
   transform: 'translateX(-110%)',
   margin: '0 auto',
 
-  'a, h1': {
+  a: {
     textAlign: 'right',
     cursor: 'pointer',
     textDecoration: 'none',
     color: '$colorOne',
+  },
+
+  'a:hover': {
+    color: 'black',
+    transform: 'scale(1.03)',
+  },
+
+  h1: {
+    textAlign: 'right',
   },
 })
 
@@ -51,4 +60,14 @@ export const FooterContainer = styled('footer', {
   display: 'flex',
   flexWrap: 'wrap',
   gap: '1rem',
+
+  a: {
+    textDecoration: 'none',
+    color: '$colorOne',
+  },
+
+  'a:hover': {
+    color: 'black',
+    textDecoration: 'underline',
+  },
 })

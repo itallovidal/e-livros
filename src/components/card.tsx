@@ -37,12 +37,11 @@ export function Card({ book, delay }: CardProps) {
 
   return (
     <CardContainer css={{ '--delay': `${(delay + 1) * 100}ms` }}>
+      {cover && <img alt={'Imagem de livro'} src={cover} />}
+      {!cover && <Loading />}
       <Button variant={'gray'}>
         <Heart size={32} />
       </Button>
-      {cover && <img alt={'Imagem de livro'} src={cover} />}
-      {!cover && <Loading />}
-
       <label htmlFor="">{book.title}</label>
       <div>
         <Button onClick={() => navigate('/about/id/booked')} variant={'blue'}>

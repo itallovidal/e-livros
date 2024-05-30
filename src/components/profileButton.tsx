@@ -3,7 +3,6 @@ import { ProfileButtonContainer } from '../styles/profilePicture.ts'
 
 interface ProfileButtonProps {
   name: string
-  profilePicture: string
 }
 
 function ProfileButton({ name }: ProfileButtonProps) {

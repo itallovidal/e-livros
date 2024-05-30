@@ -1,5 +1,5 @@
 import { styled } from './theme.ts'
-import {imageShowing, showing} from './animations.ts'
+import { imageShowing, showing } from './animations.ts'
 
 export const CardContainer = styled('div', {
   display: 'flex',

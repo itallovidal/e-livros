@@ -13,7 +13,10 @@ function FormHeader({ title, subtitle }: IFormHeader) {
 
   return (
     <FormHeaderContainer>
-      <Button onClick={() => navigation('/all')} variant={'transparent'}>
+      <Button
+        onClick={() => navigation('/architecture?offset=1')}
+        variant={'transparent'}
+      >
         <CaretLeft size={32} />
       </Button>
       <h1>{title}</h1>
