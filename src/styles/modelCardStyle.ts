@@ -4,6 +4,7 @@ export const Section = styled('section', {
   display: 'inline-flex',
   position: 'relative',
   maxWidth: 'calc((21rem * 3) + 2rem)',
+  width: '100%',
   marginTop: '2.8125rem',
   flexWrap: 'wrap',
   gap: '1rem',
