@@ -1,4 +1,4 @@
-import { styled } from './theme.ts'
+import { styled } from '../theme.ts'
 
 export const Main = styled('main', {
   display: 'flex',

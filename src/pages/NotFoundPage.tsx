@@ -3,7 +3,7 @@ import {
   BoxComponent,
   IconComponent,
   Elements,
-} from '../styles/NotFoundPageStyle.ts'
+} from '../styles/NotFoundPage/NotFoundPageStyle.ts'
 import { Circle } from 'phosphor-react'
 import { Button } from '../components/Button.tsx'
 import { useNavigate } from 'react-router-dom'

@@ -49,14 +49,10 @@ function About() {
     fetchAboutBook()
   }, [id])
 
-  function BackPage() {
-    window.history.back()
-  }
-
   return (
     <>
       <Header>
-        <Button onClick={BackPage} variant={'transparent'}>
+        <Button onClick={() => window.history.back()} variant={'transparent'}>
           <CaretLeft size={32} />
         </Button>
         <ProfileButton name={'george'} />
