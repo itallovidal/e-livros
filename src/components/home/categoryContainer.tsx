@@ -1,16 +1,22 @@
 import { CategoryContainer } from '../../styles/home/homeStyle.ts'
 import { Link } from 'react-router-dom'
-import { categories } from '../../interfaces.ts'
+import { categories } from '../../utils/interfaces.ts'
 
 export function Categories() {
   return (
     <CategoryContainer>
       <h1>Categories</h1>
-      {categories.map((category) => (
-        <Link key={category} to={`/${category}?offset=1`}>
-          {category}
-        </Link>
-      ))}
+      {categories.map((category) => {
+        if (category.includes('_')) {
+          category = category.replace('_', ' ')
+        }
+
+        return (
+          <Link key={category} to={`/${category}?offset=1`}>
+            {category}
+          </Link>
+        )
+      })}
     </CategoryContainer>
   )
 }

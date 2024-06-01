@@ -12,7 +12,7 @@ export const Input = styled('input', {
   flex: 1,
 })
 
-export const InputContainer = styled('div', {
+export const InputContainer = styled('form', {
   display: 'flex',
   justifyContent: 'space-between',
   alignItems: 'center',

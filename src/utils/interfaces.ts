@@ -26,11 +26,11 @@ export interface IAboutBook {
 
 export const categories = [
   'architecture',
-  'art History',
-  'graphic Design',
+  'art_history',
+  'graphic_design',
   'fantasy',
   'magic',
-  'computer Science',
+  'computer_science',
   'brazil',
   'finance',
   'horror',

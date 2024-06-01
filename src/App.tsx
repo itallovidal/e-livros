@@ -6,6 +6,7 @@ import About from './pages/about.tsx'
 import Login from './pages/login.tsx'
 import { Signup } from './pages/signup.tsx'
 import Profile from './pages/profile.tsx'
+import { Search } from './pages/search.tsx'
 
 function App() {
   globalStyles()
@@ -14,7 +15,8 @@ function App() {
     <BrowserRouter>
       <Routes>
         <Route path={'/:category'} element={<Home />} />
-        <Route path={'/:category/about/:id/'} element={<About />} />
+        <Route path={'/search'} element={<Search />} />
+        <Route path={'/:category/about/:id'} element={<About />} />
         <Route path={'/profile'} element={<Profile />} />
         <Route path={'/login'} element={<Login />} />
         <Route path={'/signup'} element={<Signup />} />

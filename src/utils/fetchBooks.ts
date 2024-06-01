@@ -3,18 +3,17 @@ export async function fetchBooks(
   offset: number,
   limit?: number,
 ) {
-  if (category.includes('%20')) {
-    category = category.replace('%20', '_')
-  }
+  const baseURL = 'https://openlibrary.org'
+  let URL = baseURL
 
-  if (category.includes(' ')) {
-    category = category.replace(' ', '_')
-  }
-  const URL = `https://openlibrary.org/subjects/${category}.json?offset=${offset}&limit=${limit || 12}`
-  console.log(URL)
+  const fetchBooksURL = `/subjects/${category}.json`
+  const params = `?offset=${offset}&limit=${limit || 12}`
 
-  const dados = await fetch(URL, {
+  URL += fetchBooksURL + params
+
+  const data = await fetch(URL, {
     method: 'GET',
   })
-  return await dados.json()
+
+  return await data.json()
 }

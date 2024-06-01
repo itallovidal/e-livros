@@ -10,7 +10,7 @@ import { BookBookmark, CaretLeft, Check, Heart } from 'phosphor-react'
 import { SuggestionSection } from '../components/suggestionSection.tsx'
 import { useLocation, useParams } from 'react-router-dom'
 import { useEffect, useState } from 'react'
-import { IAboutBook } from '../interfaces.ts'
+import { IAboutBook } from '../utils/interfaces.ts'
 import Loading from '../components/loading.tsx'
 
 function About() {

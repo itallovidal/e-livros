@@ -24,7 +24,10 @@ export const Section = styled('section', {
   margin: '2rem auto',
   flexWrap: 'wrap',
   gap: '1rem',
-  justifyContent: 'space-between',
+  // justifyContent: 'space-between',
+  h1: {
+    margin: '0 auto',
+  },
 })
 
 export const CategoryContainer = styled('div', {

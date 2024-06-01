@@ -3,7 +3,7 @@ import { Heart, Plus } from 'phosphor-react'
 
 import { CardContainer } from '../styles/CardStyle.ts'
 import { useNavigate } from 'react-router-dom'
-import { IBook } from '../interfaces.ts'
+import { IBook } from '../utils/interfaces.ts'
 import { useEffect, useState } from 'react'
 import Loading from './loading.tsx'
 
@@ -17,6 +17,8 @@ interface CardProps {
 export function Card({ book, delay }: CardProps) {
   const navigate = useNavigate()
   const [cover, setCover] = useState<false | string>(false)
+
+  console.log(book)
 
   async function fetchCover() {
     if (book.cover_id != null) {

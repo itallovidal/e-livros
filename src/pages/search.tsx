@@ -5,43 +5,41 @@ import { Header, Main, Section } from '../styles/home/homeStyle.ts'
 import { Categories } from '../components/home/categoryContainer.tsx'
 import { useNavigate } from 'react-router-dom'
 import { useEffect, useState } from 'react'
-import { categories, IBookData } from '../utils/interfaces.ts'
-import { fetchBooks } from '../utils/fetchBooks.ts'
+import { IBookData } from '../utils/interfaces.ts'
 import Loading from '../components/loading.tsx'
-import { Footer } from '../components/Footer.tsx'
 import { usePageParams } from '../utils/usePageParams.tsx'
-
-function Home() {
-  const [booksData, setBooks] = useState<IBookData>({} as IBookData)
+import { searchBooks } from '../utils/searchBook.ts'
+import { Button } from '../components/Button.tsx'
+export function Search() {
+  const [booksData, setBooks] = useState<IBookData>({
+    books: [],
+    category: '',
+    books_count: 0,
+  })
   const [loading, setLoading] = useState(true)
-  const { path, offset } = usePageParams()
+  const { path, title } = usePageParams()
   const navigation = useNavigate()
+
+  console.log(booksData.books.length)
 
   async function fetchBooksData() {
     setLoading(true)
 
-    const books = await fetchBooks(path, Number(offset))
+    if (!title) {
+      console.log('a')
+      return
+    }
+
+    const books = await searchBooks(title)
 
     setBooks({
-      books_count: books.work_count,
-      books: [...books.works],
+      books_count: 0,
+      books,
       category: path,
     })
   }
 
   useEffect(() => {
-    if (!path) {
-      console.log('sem categoria informada.')
-      navigation('/architecture?offset=1')
-      return
-    }
-
-    if (!categories.includes(path)) {
-      console.log('categoria informada errada.')
-      navigation('/architecture?offset=1')
-      return
-    }
-
     fetchBooksData().finally(() => setLoading(false))
   }, [path])
 
@@ -52,6 +50,13 @@ function Home() {
         <ProfileButton name={'george'} />
       </Header>
       <Main>
+        <p> Your results for {title}.</p>
+        <Button
+          onClick={() => navigation('/architecture?offset=1')}
+          variant={'transparent'}
+        >
+          Clear search query.
+        </Button>
         <Section>
           <Categories />
           {!loading &&
@@ -67,11 +72,12 @@ function Home() {
             ))}
 
           {loading && <Loading />}
+
+          {!loading && booksData?.books.length === 0 && (
+            <h1>Ops, no results found.</h1>
+          )}
         </Section>
-        {!loading && <Footer category={booksData.category} />}
       </Main>
     </>
   )
 }
-
-export default Home

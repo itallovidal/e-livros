@@ -7,7 +7,7 @@ import {
 import { useParams } from 'react-router-dom'
 import { fetchBooks } from '../utils/fetchBooks.ts'
 import { useEffect, useState } from 'react'
-import { IBookData } from '../interfaces.ts'
+import { IBookData } from '../utils/interfaces.ts'
 
 interface ICardSection {
   name: string
