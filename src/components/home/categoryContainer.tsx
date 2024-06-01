@@ -1,22 +1,6 @@
 import { CategoryContainer } from '../../styles/home/homeStyle.ts'
 import { Link } from 'react-router-dom'
-
-export const categories = [
-  'Architecture',
-  'Art History',
-  'Graphic Design',
-  'Fantasy',
-  'Magic',
-  'Computer Science',
-  'Brazil',
-  'Finance',
-  'Horror',
-  'Humor',
-  'Exercise',
-  'Cooking',
-] as const
-
-export type ICategories = typeof categories
+import { categories } from '../../interfaces.ts'
 
 export function Categories() {
   return (

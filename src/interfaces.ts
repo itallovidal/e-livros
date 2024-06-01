@@ -23,3 +23,20 @@ export interface IAboutBook {
   first_publish_date: string
   title: string
 }
+
+export const categories = [
+  'architecture',
+  'art History',
+  'graphic Design',
+  'fantasy',
+  'magic',
+  'computer Science',
+  'brazil',
+  'finance',
+  'horror',
+  'humor',
+  'exercise',
+  'cooking',
+]
+
+export type ICategories = typeof categories
