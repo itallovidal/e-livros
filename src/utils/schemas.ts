@@ -23,3 +23,14 @@ export const signupSchema = z
   })
 
 export interface ISignupSchema extends z.infer<typeof signupSchema> {}
+
+export const loginSchema = z.object({
+  email: z.string().email({
+    message: 'Invalid Email.',
+  }),
+  password: z.string().min(6, {
+    message: 'Password must contain at least 6 characters.',
+  }),
+})
+
+export interface ILoginSchema extends z.infer<typeof loginSchema> {}

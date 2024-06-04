@@ -21,7 +21,19 @@ export const InputContainer = styled('div', {
   width: '100%',
   boxShadow: '0px 5px 2px #D8D5D5',
   borderRadius: '8px',
+})
 
+export const SearchContainer = styled('form', {
+  display: 'flex',
+  justifyContent: 'space-between',
+  alignItems: 'center',
+  background: 'white',
+  padding: '.4rem .8rem',
+  gap: '1rem',
+  maxWidth: '28.875rem',
+  width: '100%',
+  boxShadow: '0px 5px 2px #D8D5D5',
+  borderRadius: '8px',
 })
 
 export const FieldContainer = styled('div', {

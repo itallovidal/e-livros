@@ -1,10 +1,10 @@
-import { Input, InputContainer } from '../styles/input.ts'
+import { Input, SearchContainer } from '../styles/input.ts'
 import { MagnifyingGlass } from 'phosphor-react'
 import { Button } from './Button.tsx'
 
 export function SearchInput() {
   return (
-    <InputContainer action={'/search'}>
+    <SearchContainer action={'/search'}>
       <Input
         type={'search'}
         placeholder={'Pesquise aqui o livro'}
@@ -13,6 +13,6 @@ export function SearchInput() {
       <Button variant={'transparent'}>
         <MagnifyingGlass size={32} />
       </Button>
-    </InputContainer>
+    </SearchContainer>
   )
 }

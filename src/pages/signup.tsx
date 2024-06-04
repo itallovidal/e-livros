@@ -42,28 +42,28 @@ export function Signup() {
       />
 
       <Form onSubmit={handleSubmit(handleSignup)}>
-        <FormInput
+        <FormInput<ISignupSchema>
           errorMessage={errors.name}
           fieldName={'name'}
           register={register}
           placeholder={'name'}
           icon={<User size={24} />}
         />
-        <FormInput
+        <FormInput<ISignupSchema>
           errorMessage={errors.email}
           fieldName={'email'}
           register={register}
           placeholder={'email'}
           icon={<Lock size={24} />}
         />
-        <FormInput
+        <FormInput<ISignupSchema>
           errorMessage={errors.password}
           fieldName={'password'}
           register={register}
           placeholder={'password'}
           icon={<Lock size={24} />}
         />
-        <FormInput
+        <FormInput<ISignupSchema>
           errorMessage={errors.passwordConfirmation}
           fieldName={'passwordConfirmation'}
           register={register}

@@ -1,22 +1,22 @@
 import { FieldContainer, Input, InputContainer } from '../styles/input.ts'
 import * as Stitches from '@stitches/react'
 import { ReactNode } from 'react'
-import { FieldError, UseFormRegister } from 'react-hook-form'
-import { ISignupSchema } from '../utils/schemas.ts'
-interface IFormInput extends Stitches.ComponentProps<typeof Input> {
+import { FieldError, FieldValues, Path, UseFormRegister } from 'react-hook-form'
+interface IFormInput<T extends FieldValues>
+  extends Stitches.ComponentProps<typeof Input> {
   icon: ReactNode
-  register: UseFormRegister<ISignupSchema>
-  fieldName: keyof ISignupSchema
+  register: UseFormRegister<T>
+  fieldName: Path<T>
   errorMessage: undefined | FieldError
 }
 
-export function FormInput({
+export function FormInput<T extends FieldValues>({
   icon,
   fieldName,
   errorMessage,
   register,
   ...props
-}: IFormInput) {
+}: IFormInput<T>) {
   return (
     <FieldContainer>
       <InputContainer>

@@ -10,3 +10,10 @@ export interface IApiError {
   message: string
   error: IFieldError[]
 }
+
+export interface ILoginError {
+  message: string
+  field: string
+  status: number
+  error: string
+}
