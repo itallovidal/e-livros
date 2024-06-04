@@ -7,14 +7,6 @@ export const Form = styled('form', {
   alignItems: 'center',
   maxWidth: 'calc((21rem * 3) + 2rem)',
   margin: '0 auto',
-
-  div: {
-    paddingLeft: '2rem',
-    maxWidth: '18rem',
-  },
-  input: {
-    padding: '1rem 2rem',
-  },
 })
 
 export const FormHeaderContainer = styled('div', {

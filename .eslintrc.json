@@ -3,6 +3,7 @@
       "rules": {
         "no-useless-constructor": "off",
         "no-new": "off",
-        "array-callback-return": "off"
+        "array-callback-return": "off",
+        "no-explicit-any": "off"
   }
 }
