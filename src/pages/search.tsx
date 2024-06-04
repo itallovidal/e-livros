@@ -5,11 +5,11 @@ import { Header, Main, Section } from '../styles/home/homeStyle.ts'
 import { Categories } from '../components/home/categoryContainer.tsx'
 import { useNavigate } from 'react-router-dom'
 import { useEffect, useState } from 'react'
-import { IBookData } from '../utils/interfaces.ts'
-import Loading from '../components/loading.tsx'
-import { usePageParams } from '../utils/usePageParams.tsx'
-import { searchBooks } from '../utils/searchBook.ts'
-import { Button } from '../components/Button.tsx'
+import type { IBookData } from '../@types/openLibary.d.ts'
+import { Loading } from '../components/loading.tsx'
+import { usePageParams } from '../components/usePageParams.tsx'
+import { searchBooks } from '../utils/openLibrary/searchBook.ts'
+import { Button } from '../components/button.tsx'
 export function Search() {
   const [booksData, setBooks] = useState<IBookData>({
     books: [],
@@ -47,7 +47,7 @@ export function Search() {
     <>
       <Header>
         <SearchInput />
-        <ProfileButton name={'george'} />
+        <ProfileButton />
       </Header>
       <Main>
         <p> Your results for {title}.</p>

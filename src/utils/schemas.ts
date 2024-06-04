@@ -34,3 +34,18 @@ export const loginSchema = z.object({
 })
 
 export interface ILoginSchema extends z.infer<typeof loginSchema> {}
+
+export const categories = [
+  'architecture',
+  'art_history',
+  'graphic_design',
+  'fantasy',
+  'magic',
+  'computer_science',
+  'brazil',
+  'finance',
+  'horror',
+  'humor',
+  'exercise',
+  'cooking',
+]

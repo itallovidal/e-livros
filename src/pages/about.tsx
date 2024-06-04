@@ -5,13 +5,13 @@ import {
   Section,
 } from '../styles/about/aboutStyle.ts'
 import ProfileButton from '../components/profileButton.tsx'
-import { Button } from '../components/Button.tsx'
+import { Button } from '../components/button.tsx'
 import { BookBookmark, CaretLeft, Check, Heart } from 'phosphor-react'
 import { SuggestionSection } from '../components/suggestionSection.tsx'
 import { useLocation, useParams } from 'react-router-dom'
 import { useEffect, useState } from 'react'
-import { IAboutBook } from '../utils/interfaces.ts'
-import Loading from '../components/loading.tsx'
+import type { IAboutBook } from '../@types/openLibary.d.ts'
+import { Loading } from '../components/loading.tsx'
 
 function About() {
   const { id } = useParams() as { id: string }
@@ -55,7 +55,7 @@ function About() {
         <Button onClick={() => window.history.back()} variant={'transparent'}>
           <CaretLeft size={32} />
         </Button>
-        <ProfileButton name={'george'} />
+        <ProfileButton />
       </Header>
       <Main>
         <Section>

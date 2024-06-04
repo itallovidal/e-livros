@@ -17,3 +17,8 @@ export interface ILoginError {
   status: number
   error: string
 }
+
+export interface IUser {
+  accessToken: string
+  name: string
+}

@@ -1,13 +1,13 @@
-import FormHeader from '../components/formHeader.tsx'
-import { FormInput } from '../components/Input.tsx'
-import { Lock, User } from 'phosphor-react'
+import FormHeader from '../components/footer/formHeader.tsx'
+import { FormInput } from '../components/input.tsx'
+import {Envelope, Lock, User} from 'phosphor-react'
 import { Form } from '../styles/formStyles.ts'
-import { Button } from '../components/Button.tsx'
-import FormFooter from '../components/formFooter.tsx'
+import { Button } from '../components/button.tsx'
+import FormFooter from '../components/footer/formFooter.tsx'
 import { useForm } from 'react-hook-form'
 import { zodResolver } from '@hookform/resolvers/zod'
 import { ISignupSchema, signupSchema } from '../utils/schemas.ts'
-import { signup } from '../utils/signup.ts'
+import { signup } from '../utils/eLivrosAPI/signup.ts'
 import { useNavigate } from 'react-router-dom'
 
 export function Signup() {
@@ -54,7 +54,7 @@ export function Signup() {
           fieldName={'email'}
           register={register}
           placeholder={'email'}
-          icon={<Lock size={24} />}
+          icon={<Envelope  size={24} />}
         />
         <FormInput<ISignupSchema>
           errorMessage={errors.password}

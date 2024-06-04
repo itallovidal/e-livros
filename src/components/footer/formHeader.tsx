@@ -1,7 +1,7 @@
-import { Button } from './Button.tsx'
+import { Button } from '../button.tsx'
 import { CaretLeft } from 'phosphor-react'
 import { useNavigate } from 'react-router-dom'
-import { FormHeaderContainer } from '../styles/formStyles.ts'
+import { FormHeaderContainer } from '../../styles/formStyles.ts'
 
 interface IFormHeader {
   title: string

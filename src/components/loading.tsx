@@ -2,7 +2,7 @@ import Lottie from 'react-lottie'
 import loadingLottie from '../assets/looties/loadingLottie.json'
 import { LoadingContainer } from '../styles/loading.ts'
 
-function Loading() {
+export function Loading() {
   const defaultOptions = {
     loop: true,
     autoplay: true,
@@ -18,5 +18,3 @@ function Loading() {
     </LoadingContainer>
   )
 }
-
-export default Loading

@@ -1,3 +1,5 @@
+import { categories } from '../utils/schemas.ts'
+
 export interface IAuthor {
   key: string
   name: string
@@ -23,20 +25,5 @@ export interface IAboutBook {
   first_publish_date: string
   title: string
 }
-
-export const categories = [
-  'architecture',
-  'art_history',
-  'graphic_design',
-  'fantasy',
-  'magic',
-  'computer_science',
-  'brazil',
-  'finance',
-  'horror',
-  'humor',
-  'exercise',
-  'cooking',
-]
 
 export type ICategories = typeof categories

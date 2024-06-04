@@ -1,14 +1,16 @@
-import FormHeader from '../components/formHeader.tsx'
-import { FormInput } from '../components/Input.tsx'
+import FormHeader from '../components/footer/formHeader.tsx'
+import { FormInput } from '../components/input.tsx'
 import { Lock, User } from 'phosphor-react'
 import { Form } from '../styles/formStyles.ts'
-import { Button } from '../components/Button.tsx'
-import FormFooter from '../components/formFooter.tsx'
+import { Button } from '../components/button.tsx'
+import FormFooter from '../components/footer/formFooter.tsx'
 import { useNavigate } from 'react-router-dom'
 import { useForm } from 'react-hook-form'
 import { ILoginSchema, loginSchema } from '../utils/schemas.ts'
 import { zodResolver } from '@hookform/resolvers/zod'
-import { login } from '../utils/login.ts'
+import { login } from '../utils/eLivrosAPI/login.ts'
+import { useContext } from 'react'
+import { AppContext } from '../contexts/globalContext.tsx'
 
 function Login() {
   const navigate = useNavigate()
@@ -20,11 +22,15 @@ function Login() {
   } = useForm<ILoginSchema>({
     resolver: zodResolver(loginSchema),
   })
+  const { loginUser } = useContext(AppContext)
 
   async function handleLogin(data: ILoginSchema) {
     const response = await login(data)
 
-    if (response.status === 200) {
+    console.log(response)
+
+    if (response.status === 200 && response.user) {
+      loginUser(response.user)
       navigate('/architecture?offset=1')
       return
     }

@@ -1,6 +1,6 @@
-import { Button } from './Button.tsx'
+import { Button } from '../button.tsx'
 import { useNavigate } from 'react-router-dom'
-import { FormFooterContainer } from '../styles/formStyles.ts'
+import { FormFooterContainer } from '../../styles/formStyles.ts'
 
 interface IFormFooter {
   title: string

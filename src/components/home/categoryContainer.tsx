@@ -1,6 +1,6 @@
 import { CategoryContainer } from '../../styles/home/homeStyle.ts'
 import { Link } from 'react-router-dom'
-import { categories } from '../../utils/interfaces.ts'
+import { categories } from '../../utils/schemas.ts'
 
 export function Categories() {
   return (

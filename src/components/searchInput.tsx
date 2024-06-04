@@ -1,6 +1,6 @@
 import { Input, SearchContainer } from '../styles/input.ts'
 import { MagnifyingGlass } from 'phosphor-react'
-import { Button } from './Button.tsx'
+import { Button } from './button.tsx'
 
 export function SearchInput() {
   return (

@@ -1,4 +1,4 @@
-// styles/index.ts
+// styles/appRoutes.tsx
 import { createStitches, globalCss } from '@stitches/react'
 import { showing } from './animations.ts'
 
@@ -35,5 +35,10 @@ export const globalStyles = globalCss({
 
   body: {
     background: '$colorTwo',
+  },
+
+  a: {
+    textDecoration: 'none',
+    color: '$primary',
   },
 })

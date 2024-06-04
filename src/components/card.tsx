@@ -1,11 +1,11 @@
-import { Button } from './Button.tsx'
+import { Button } from './button.tsx'
 import { Heart, Plus } from 'phosphor-react'
 
 import { CardContainer } from '../styles/CardStyle.ts'
 import { useNavigate } from 'react-router-dom'
-import { IBook } from '../utils/interfaces.ts'
+import type { IBook } from '../@types/openLibary.d.ts'
 import { useEffect, useState } from 'react'
-import Loading from './loading.tsx'
+import { Loading } from './loading.tsx'
 
 interface CardProps {
   book: IBook & {
@@ -17,8 +17,6 @@ interface CardProps {
 export function Card({ book, delay }: CardProps) {
   const navigate = useNavigate()
   const [cover, setCover] = useState<false | string>(false)
-
-  console.log(book)
 
   async function fetchCover() {
     if (book.cover_id != null) {

@@ -2,6 +2,7 @@ import { styled } from '../theme.ts'
 
 export const Header = styled('header', {
   display: 'flex',
+  alignItems: 'center',
   margin: '2rem auto',
   gap: '1rem',
   justifyContent: 'center',

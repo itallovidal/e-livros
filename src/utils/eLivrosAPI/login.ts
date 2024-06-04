@@ -1,15 +1,14 @@
-import { ILoginSchema } from './schemas.ts'
-import { ILoginError } from '../@types/api'
+import { ILoginSchema } from '../schemas.ts'
+import { isApiLoginError } from '../../@types/typeGuards/isLoginError.ts'
+import { IUser } from '../../@types/api'
 
-function isApiLoginError(response: any): response is ILoginError {
-  if (!response === null) return false
-
-  if (!(response instanceof Object)) return false
-
-  return Array.isArray(response.error)
+interface ILoginResponse {
+  message: string
+  status: number
+  user?: IUser
 }
 
-export async function login(data: ILoginSchema) {
+export async function login(data: ILoginSchema): Promise<ILoginResponse> {
   const response = await fetch('http://localhost:3000/users/login', {
     method: 'POST',
     headers: {
@@ -26,6 +25,8 @@ export async function login(data: ILoginSchema) {
       status: response.status,
     }
   }
+
+  console.log(convertedResponse)
 
   return {
     user: {

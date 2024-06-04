@@ -4,18 +4,24 @@ import ProfileButton from '../components/profileButton.tsx'
 import { Header, Main, Section } from '../styles/home/homeStyle.ts'
 import { Categories } from '../components/home/categoryContainer.tsx'
 import { useNavigate } from 'react-router-dom'
-import { useEffect, useState } from 'react'
-import { categories, IBookData } from '../utils/interfaces.ts'
-import { fetchBooks } from '../utils/fetchBooks.ts'
-import Loading from '../components/loading.tsx'
-import { Footer } from '../components/Footer.tsx'
-import { usePageParams } from '../utils/usePageParams.tsx'
+import { useContext, useEffect, useState } from 'react'
+import type { IBookData } from '../@types/openLibary.d.ts'
+import { fetchBooks } from '../utils/openLibrary/fetchBooks.ts'
+import { Loading } from '../components/loading.tsx'
+import { Footer } from '../components/footer/footer.tsx'
+import { usePageParams } from '../components/usePageParams.tsx'
+import { AppContext } from '../contexts/globalContext.tsx'
+import { Button } from '../components/button.tsx'
+import { categories } from '../utils/schemas.ts'
 
-function Home() {
+export function Home() {
   const [booksData, setBooks] = useState<IBookData>({} as IBookData)
   const [loading, setLoading] = useState(true)
   const { path, offset } = usePageParams()
   const navigation = useNavigate()
+  const { user } = useContext(AppContext)
+
+  console.log(user)
 
   async function fetchBooksData() {
     setLoading(true)
@@ -49,7 +55,15 @@ function Home() {
     <>
       <Header>
         <SearchInput />
-        <ProfileButton name={'george'} />
+        {user?.name ? (
+          <ProfileButton />
+        ) : (
+          <Button
+            onClick={() => navigation('/login')}
+            variant={'blue'}
+            children={'Login'}
+          />
+        )}
       </Header>
       <Main>
         <Section>
@@ -73,5 +87,3 @@ function Home() {
     </>
   )
 }
-
-export default Home

@@ -1,13 +1,5 @@
-import { ISignupSchema } from './schemas.ts'
-import { IApiError } from '../@types/api'
-
-function isApiError(response: any): response is IApiError {
-  if (!response === null) return false
-
-  if (!(response instanceof Object)) return false
-
-  return Array.isArray(response.error)
-}
+import { ISignupSchema } from '../schemas.ts'
+import { isApiSignupError } from '../../@types/typeGuards/isSignupError.ts'
 
 export async function signup(data: ISignupSchema): Promise<{
   message: string
@@ -29,7 +21,7 @@ export async function signup(data: ISignupSchema): Promise<{
 
   console.log(convertedResponse)
 
-  if (response.status !== 201 && isApiError(convertedResponse)) {
+  if (response.status !== 201 && isApiSignupError(convertedResponse)) {
     return {
       message: convertedResponse.message,
       status: response.status,

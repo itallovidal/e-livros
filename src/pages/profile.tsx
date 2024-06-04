@@ -1,4 +1,4 @@
-import { Button } from '../components/Button.tsx'
+import { Button } from '../components/button.tsx'
 import { CaretLeft, SignOut } from 'phosphor-react'
 import { Header, Main } from '../styles/profile/profileStyle.ts'
 import ProfileButton from '../components/profileButton.tsx'

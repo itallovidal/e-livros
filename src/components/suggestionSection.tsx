@@ -5,9 +5,9 @@ import {
   StyledModelCard,
 } from '../styles/modelCardStyle.ts'
 import { useParams } from 'react-router-dom'
-import { fetchBooks } from '../utils/fetchBooks.ts'
+import { fetchBooks } from '../utils/openLibrary/fetchBooks.ts'
 import { useEffect, useState } from 'react'
-import { IBookData } from '../utils/interfaces.ts'
+import { IBookData } from '../@types/openLibary.d.ts'
 
 interface ICardSection {
   name: string
