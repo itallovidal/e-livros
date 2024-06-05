@@ -35,10 +35,11 @@ export const CardContainer = styled('div', {
   },
 
   label: {
-    padding: '1.5rem',
+    padding: '1.2rem',
     width: '100%',
-    background: 'white',
+    backgroundColor: '$colorOne',
     textAlign: 'center',
+    color: 'white'
   },
 
   div: {

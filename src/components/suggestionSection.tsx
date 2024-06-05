@@ -7,7 +7,7 @@ import {
 import { useParams } from 'react-router-dom'
 import { fetchBooks } from '../utils/openLibrary/fetchBooks.ts'
 import { useEffect, useState } from 'react'
-import { IBookData } from '../@types/openLibary.d.ts'
+import type { IBookData } from '../@types/openLibary.d.ts'
 
 interface ICardSection {
   name: string
@@ -18,7 +18,7 @@ export function SuggestionSection({ name }: ICardSection) {
   const [booksData, setBooks] = useState<IBookData>({} as IBookData)
 
   async function fetchSuggestionBooks() {
-    const books = await fetchBooks(category, 121, 3)
+    const books = await fetchBooks(category, 100, 3)
 
     setBooks({
       books_count: books.work_count,

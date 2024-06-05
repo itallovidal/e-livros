@@ -11,9 +11,7 @@ export async function fetchBooks(
 
   URL += fetchBooksURL + params
 
-  const data = await fetch(URL, {
-    method: 'GET',
-  })
+  const data = await fetch(URL)
 
   return await data.json()
 }

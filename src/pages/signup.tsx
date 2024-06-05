@@ -1,6 +1,6 @@
 import FormHeader from '../components/footer/formHeader.tsx'
 import { FormInput } from '../components/input.tsx'
-import {Envelope, Lock, User} from 'phosphor-react'
+import { Envelope, Lock, User } from 'phosphor-react'
 import { Form } from '../styles/formStyles.ts'
 import { Button } from '../components/button.tsx'
 import FormFooter from '../components/footer/formFooter.tsx'
@@ -54,7 +54,7 @@ export function Signup() {
           fieldName={'email'}
           register={register}
           placeholder={'email'}
-          icon={<Envelope  size={24} />}
+          icon={<Envelope size={24} />}
         />
         <FormInput<ISignupSchema>
           errorMessage={errors.password}

@@ -39,6 +39,6 @@ export const globalStyles = globalCss({
 
   a: {
     textDecoration: 'none',
-    color: '$primary',
+    color: '$colorOne',
   },
 })

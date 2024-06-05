@@ -24,6 +24,9 @@ export interface IAboutBook {
   description: string
   first_publish_date: string
   title: string
+  isRead: boolean
+  isFavorite: boolean
+  img: string
 }
 
 export type ICategories = typeof categories

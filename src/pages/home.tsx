@@ -36,6 +36,7 @@ export function Home() {
   }
 
   useEffect(() => {
+
     if (!path) {
       console.log('sem categoria informada.')
       navigation('/architecture?offset=1')
@@ -49,7 +50,7 @@ export function Home() {
     }
 
     fetchBooksData().finally(() => setLoading(false))
-  }, [path])
+  }, [path, offset])
 
   return (
     <>

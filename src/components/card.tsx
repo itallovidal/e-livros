@@ -1,11 +1,12 @@
 import { Button } from './button.tsx'
-import { Heart, Plus } from 'phosphor-react'
+import { Plus } from 'phosphor-react'
 
 import { CardContainer } from '../styles/CardStyle.ts'
 import { useNavigate } from 'react-router-dom'
 import type { IBook } from '../@types/openLibary.d.ts'
 import { useEffect, useState } from 'react'
 import { Loading } from './loading.tsx'
+import { fetchBookCover } from '../utils/openLibrary/fetchBookCover.ts'
 
 interface CardProps {
   book: IBook & {
@@ -20,14 +21,8 @@ export function Card({ book, delay }: CardProps) {
 
   async function fetchCover() {
     if (book.cover_id != null) {
-      const dados = await fetch(
-        `https://covers.openlibrary.org/b/id/${book.cover_id}-L.jpg`,
-        {
-          method: 'GET',
-        },
-      )
-      const img = await dados.blob()
-      setCover(URL.createObjectURL(img))
+      const img = await fetchBookCover(book.cover_id)
+      setCover(img)
     }
   }
 
@@ -39,14 +34,10 @@ export function Card({ book, delay }: CardProps) {
     <CardContainer css={{ '--delay': `${(delay + 1) * 100}ms` }}>
       {cover && <img alt={'Imagem de livro'} src={cover} />}
       {!cover && <Loading />}
-      <Button variant={'gray'}>
-        <Heart size={32} />
-      </Button>
-      <label htmlFor="">{book.title}</label>
+
       <div>
-        <Button onClick={() => navigate('/about/id/booked')} variant={'blue'}>
-          Book
-        </Button>
+        <label htmlFor="">{book.title}</label>
+
         <Button
           onClick={() =>
             navigate(`/${book.category}/about/${book.key.substring(7)}`, {

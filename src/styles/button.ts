@@ -11,8 +11,17 @@ export const Button = styled('button', {
   alignItems: 'center',
   gap: '5px',
 
+  '&:disabled': {
+    opacity: 0.4,
+  },
+
+  '&:disabled:hover': {
+    opacity: 0.4,
+    cursor: 'not-allowed',
+  },
+
   '&:hover': {
-    opacity: '.8',
+    opacity: .4,
     cursor: 'pointer',
   },
 
