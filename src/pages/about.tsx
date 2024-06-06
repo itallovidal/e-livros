@@ -20,6 +20,7 @@ import { readBook } from '../utils/eLivrosAPI/readBook.ts'
 import { unreadBook } from '../utils/eLivrosAPI/unreadBook.ts'
 import { favoriteBook } from '../utils/eLivrosAPI/favoriteBook.ts'
 import { unfavoriteBook } from '../utils/eLivrosAPI/unfavoriteBook.ts'
+import { Booking } from '../utils/booking.tsx'
 
 function About() {
   const { id } = useParams() as { id: string }
@@ -107,6 +108,13 @@ function About() {
     })
   }
 
+  const [show, setShow] = useState(false)
+  function Modify() {
+    setShow((prevState) => {
+      return !prevState
+    })
+  }
+
   useEffect(() => {
     fetchAboutBook()
   }, [id])
@@ -129,6 +137,7 @@ function About() {
       </Header>
       <Main>
         <Section>
+          {show && <Booking img={book.img} title={book.title} mod={Modify} />}
           <DivImgContainer>
             {book.title && (
               <>
@@ -141,7 +150,7 @@ function About() {
                   )}
 
                   <div className={'container_btns'}>
-                    <Button variant={'blue'}>
+                    <Button variant={'blue'} onClick={Modify}>
                       Reservar
                       <BookBookmark size={32} />
                     </Button>

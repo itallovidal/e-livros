@@ -21,8 +21,6 @@ export function Home() {
   const navigation = useNavigate()
   const { user } = useContext(AppContext)
 
-  console.log(user)
-
   async function fetchBooksData() {
     setLoading(true)
 
@@ -36,7 +34,6 @@ export function Home() {
   }
 
   useEffect(() => {
-
     if (!path) {
       console.log('sem categoria informada.')
       navigation('/architecture?offset=1')

@@ -39,7 +39,7 @@ export const CardContainer = styled('div', {
     width: '100%',
     backgroundColor: '$colorOne',
     textAlign: 'center',
-    color: 'white'
+    color: 'white',
   },
 
   div: {

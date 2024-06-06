@@ -4,12 +4,13 @@ import ProfileButton from '../components/profileButton.tsx'
 import { Header, Main, Section } from '../styles/home/homeStyle.ts'
 import { Categories } from '../components/home/categoryContainer.tsx'
 import { useNavigate } from 'react-router-dom'
-import { useEffect, useState } from 'react'
+import { useContext, useEffect, useState } from 'react'
 import type { IBookData } from '../@types/openLibary.d.ts'
 import { Loading } from '../components/loading.tsx'
 import { usePageParams } from '../components/usePageParams.tsx'
 import { searchBooks } from '../utils/openLibrary/searchBook.ts'
 import { Button } from '../components/button.tsx'
+import { AppContext } from '../contexts/globalContext.tsx'
 export function Search() {
   const [booksData, setBooks] = useState<IBookData>({
     books: [],
@@ -20,6 +21,7 @@ export function Search() {
   const { path, title } = usePageParams()
   const navigation = useNavigate()
 
+  const { user } = useContext(AppContext)
   console.log(booksData.books.length)
 
   async function fetchBooksData() {
@@ -47,7 +49,15 @@ export function Search() {
     <>
       <Header>
         <SearchInput />
-        <ProfileButton />
+        {user?.name ? (
+          <ProfileButton />
+        ) : (
+          <Button
+            onClick={() => navigation('/login')}
+            variant={'blue'}
+            children={'Login'}
+          />
+        )}
       </Header>
       <Main>
         <p> Your results for {title}.</p>

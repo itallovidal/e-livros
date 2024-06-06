@@ -21,8 +21,9 @@ export const Section = styled('section', {
   display: 'flex',
   flexWrap: 'wrap',
   gap: '1rem',
-  justifyContent: 'space-between',
+  justifyContent: 'center',
   maxWidth: 'calc((21rem * 3) + 2rem)',
+  position: 'relative',
 
   '.container_btns': {
     alignItems: 'center',

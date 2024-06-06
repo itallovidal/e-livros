@@ -26,11 +26,11 @@ function Login() {
 
   async function handleLogin(data: ILoginSchema) {
     const response = await login(data)
-
     console.log(response)
 
     if (response.status === 200 && response.user) {
       loginUser(response.user)
+      localStorage.setItem('user', JSON.stringify(response.user))
       navigate('/architecture?offset=1')
       return
     }
