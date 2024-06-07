@@ -16,3 +16,7 @@ export const Main = styled('main', {
   width: '100%',
   flexDirection: 'column',
 })
+
+export const Section = styled('section', {
+  display: 'flex',
+})
