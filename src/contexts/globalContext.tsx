@@ -1,10 +1,12 @@
 import { createContext, ReactNode, useEffect, useState } from 'react'
 import { IUser } from '../@types/api'
+import { useNavigate } from 'react-router-dom'
 
 interface IAppContext {
   user: null | IUser
   loginUser: (data: IUser) => void
   logOutUser: () => void
+  navigateTo: (route: string) => void
 }
 
 interface IGlobalContextProps {
@@ -15,6 +17,12 @@ export const AppContext = createContext({} as IAppContext)
 
 export function GlobalContextProvider({ children }: IGlobalContextProps) {
   const [user, setUser] = useState<null | IUser>(null)
+  const navigation = useNavigate()
+
+  function navigateTo(route: string) {
+    navigation(route)
+  }
+
   useEffect(() => {
     const dataLocalUser = localStorage.getItem('user')
     if (dataLocalUser != null) {
@@ -31,7 +39,7 @@ export function GlobalContextProvider({ children }: IGlobalContextProps) {
   }
 
   return (
-    <AppContext.Provider value={{ user, loginUser, logOutUser }}>
+    <AppContext.Provider value={{ user, loginUser, logOutUser, navigateTo }}>
       {children}
     </AppContext.Provider>
   )
