@@ -31,6 +31,8 @@ export function SuggestionSection({ name }: ICardSection) {
     fetchSuggestionBooks()
   }, [category])
 
+  if (category === 'search') return <></>
+
   return (
     <Section>
       <CardAndTitle>

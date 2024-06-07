@@ -4,11 +4,9 @@ import { useNavigate } from 'react-router-dom'
 import { useContext } from 'react'
 import { AppContext } from '../contexts/globalContext.tsx'
 
-function ProfileButton() {
+export function ProfileSummary() {
   const navigate = useNavigate()
   const { user } = useContext(AppContext)
-
-  console.log(user)
 
   return (
     <ProfileButtonContainer>
@@ -19,5 +17,3 @@ function ProfileButton() {
     </ProfileButtonContainer>
   )
 }
-
-export default ProfileButton

@@ -22,3 +22,23 @@ export interface IUser {
   accessToken: string
   name: string
 }
+
+export interface IProfile {
+  user: {
+    email: string
+    createdAt: string
+    name: string
+  }
+  readBooks: {
+    id: string
+    user_id: string
+    book_id: string
+    created_at: Date
+  }[]
+  favoriteBooks: {
+    id: string
+    user_id: string
+    book_id: string
+    created_at: Date
+  }[]
+}

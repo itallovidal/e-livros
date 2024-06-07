@@ -12,6 +12,7 @@ export interface IBook {
   authors: IAuthor
   first_publish_year: number
   key: string
+  category?: string
 }
 
 export interface IBookData {
@@ -20,7 +21,7 @@ export interface IBookData {
   category: string
 }
 
-export interface IAboutBook {
+export interface IBookDetails {
   description: string
   first_publish_date: string
   title: string

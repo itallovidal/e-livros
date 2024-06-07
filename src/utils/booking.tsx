@@ -9,7 +9,7 @@ import { Button } from '../components/button.tsx'
 import { useEffect, useState } from 'react'
 import Calendar from 'react-calendar'
 import 'react-calendar/dist/Calendar.css'
-import { IAboutBook } from '../@types/openLibary'
+import { IBookDetails } from '../@types/openLibary'
 import { aboutBook } from './openLibrary/aboutBook.ts'
 import { fetchBookCover } from './openLibrary/fetchBookCover.ts'
 import { useParams } from 'react-router-dom'
@@ -19,7 +19,7 @@ type Value = ValuePiece | [ValuePiece, ValuePiece]
 
 export function Booking({ img, title, mod }) {
   const [value, onChange] = useState<Value>(new Date())
-  // const [book, setBook] = useState<IAboutBook>({} as IAboutBook)
+  // const [book, setBook] = useState<IBookDetails>({} as IBookDetails)
   //
   // const { id } = useParams() as { id: string }
   //

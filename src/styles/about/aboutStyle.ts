@@ -33,7 +33,7 @@ export const Section = styled('section', {
   },
 })
 
-export const DivImgContainer = styled('div', {
+export const BookDetailsContainer = styled('div', {
   display: 'flex',
   alignItems: 'flex-start',
 

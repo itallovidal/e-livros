@@ -8,6 +8,8 @@ export function usePageParams() {
 
   const params = useLocation()
 
+  console.log(params)
+
   let path = params.pathname.slice(1).toLowerCase()
   if (path.includes('%20')) {
     path = path.replace('%20', '_')
@@ -28,7 +30,7 @@ export function usePageParams() {
       return
     }
 
-    if (!categories.includes(path)) {
+    if (!categories.includes(path) && path !== 'search') {
       console.log('categoria informada errada.')
       navigateTo('/architecture?offset=1')
     }
