@@ -21,7 +21,7 @@ export const Button = styled('button', {
   },
 
   '&:hover': {
-    opacity: .4,
+    opacity: 0.4,
     cursor: 'pointer',
   },
 

@@ -14,6 +14,7 @@ export const CardContainer = styled('div', {
   transform: 'translateY(10px)',
   opacity: 0,
   animation: `${showing} 200ms var(--delay) forwards`,
+  minWidth: '30%',
 
   '&:hover': {
     boxShadow: '5px 5px 10px #D8D5D5',
