@@ -1,4 +1,6 @@
 import {
+  ContainerBooks,
+  DivBooks,
   Header,
   InfoUser,
   Main,
@@ -11,7 +13,7 @@ import { ProfileBookList } from '../components/profile/profileBookList.tsx'
 import { IProfile } from '../@types/api'
 import { getProfileInfo } from '../utils/eLivrosAPI/getProfileInfo.ts'
 import { Loading } from '../components/loading.tsx'
-import { CaretLeft, SignOut } from 'phosphor-react'
+import { CaretLeft, CaretRight, SignOut } from 'phosphor-react'
 import { Button } from '../components/button.tsx'
 import { useNavigate } from 'react-router-dom'
 
@@ -23,13 +25,15 @@ function Profile() {
   const { logOutUser } = useContext(AppContext)
 
   useEffect(() => {
-    setLoading(true)
-    getProfileInfo(user!.accessToken)
-      .then((data) => {
-        setProfile(data)
-      })
-      .finally(() => setLoading(false))
-  }, [])
+    if (user && user.accessToken) {
+      setLoading(true)
+      getProfileInfo(user.accessToken)
+        .then((data) => {
+          setProfile(data)
+        })
+        .finally(() => setLoading(false))
+    }
+  }, [user])
 
   if (loading || !profile) return <Loading />
 
@@ -57,17 +61,33 @@ function Profile() {
         {profile.readBooks.length !== 0 && (
           <Section>
             <h1>Lidos</h1>
-            <div className={'DivBooks'}>
-              <ProfileBookList books={profile.readBooks} />
-            </div>
+            <ContainerBooks>
+              <Button variant={'transparent'} className={'btnLeft'}>
+                <CaretLeft size={32} />
+              </Button>
+              <DivBooks>
+                <ProfileBookList books={profile.readBooks} />
+              </DivBooks>
+              <Button variant={'transparent'} className={'btnRight'}>
+                <CaretRight size={32} />
+              </Button>
+            </ContainerBooks>
           </Section>
         )}
         {profile.favoriteBooks.length !== 0 && (
           <Section>
             <h1>Favoritos</h1>
-            <div className={'DivBooks'}>
-              <ProfileBookList books={profile.favoriteBooks} />
-            </div>
+            <ContainerBooks>
+              <Button variant={'transparent'} className={'btnLeft'}>
+                <CaretLeft size={32} />
+              </Button>
+              <DivBooks>
+                <ProfileBookList books={profile.favoriteBooks} />
+              </DivBooks>
+              <Button variant={'transparent'} className={'btnRight'}>
+                <CaretRight size={32} />
+              </Button>
+            </ContainerBooks>
           </Section>
         )}
         {profile.readBooks.length === 0 &&

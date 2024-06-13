@@ -9,7 +9,10 @@ export function HomeHeader() {
   const navigate = useNavigate()
   return (
     <Header>
-      <Button variant={'transparent'} onClick={() => navigate('/architecture?offset=1')}>
+      <Button
+        variant={'transparent'}
+        onClick={() => navigate('/architecture?offset=1')}
+      >
         <CaretLeft size={32} />
       </Button>
       <SearchInput />

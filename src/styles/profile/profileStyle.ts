@@ -38,16 +38,31 @@ export const Section = styled('section', {
   flexDirection: 'column',
   width: 'calc((21rem * 3) + 2rem)',
   margin: '2rem auto',
+})
 
-  '.containerBooks': {
-    display: 'flex',
+export const ContainerBooks = styled('div', {
+  position: 'relative',
+  display: 'flex',
+
+  '.btnLeft, .btnRight': {
+    position: 'absolute',
+    top: '50%',
+    padding: '0.5rem',
   },
 
-  '.DivBooks': {
-    display: 'flex',
-    alignItems: 'center',
-    gap: '1rem',
-    overflowX: 'auto',
-    scrollbehavior: 'smooth',
+  '.btnLeft': {
+    left: '-40px',
   },
+
+  '.btnRight': {
+    right: '-40px',
+  },
+})
+
+export const DivBooks = styled('div', {
+  display: 'flex',
+  alignItems: 'center',
+  gap: '1rem',
+  overflowX: 'auto',
+  scrollbehavior: 'smooth',
 })

@@ -40,7 +40,9 @@ export function Card({ book, delay }: CardProps) {
 
         <Button
           onClick={() =>
-            navigate(`/${book.category}/about/${book.key.substring(7)}`)
+            book.category
+              ? navigate(`/${book.category}/about/${book.key.substring(7)}`)
+              : navigate(`/profile/about/${book.key.substring(7)}`)
           }
           variant={'gray'}
         >

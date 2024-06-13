@@ -31,7 +31,7 @@ export function SuggestionSection({ name }: ICardSection) {
     fetchSuggestionBooks()
   }, [category])
 
-  if (category === 'search') return <></>
+  if (category === 'search' || category === 'profile') return <></>
 
   return (
     <Section>
