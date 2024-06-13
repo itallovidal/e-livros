@@ -3,6 +3,8 @@ import { getUserBooksFromOpenAPI } from '../../utils/openLibrary/getUserReadBook
 import { Loading } from '../loading.tsx'
 import { Card } from '../card.tsx'
 import { IBook } from '../../@types/openLibary'
+import Carousel from 'react-multi-carousel'
+import 'react-multi-carousel/lib/styles.css'
 
 export function ProfileBookList({
   books,
@@ -32,14 +34,37 @@ export function ProfileBookList({
 
   if (loading || !bookList) return <Loading />
 
-  return bookList.map((book, i) => (
-    <Card
-      delay={i}
-      key={i}
-      book={{
-        ...book,
-        category: '',
-      }}
-    />
-  ))
+  const responsive = {
+    superLargeDesktop: {
+      breakpoint: { max: 4000, min: 3000 },
+      items: 5,
+    },
+    desktop: {
+      breakpoint: { max: 3000, min: 1024 },
+      items: 3,
+    },
+    tablet: {
+      breakpoint: { max: 1024, min: 464 },
+      items: 2,
+    },
+    mobile: {
+      breakpoint: { max: 464, min: 0 },
+      items: 1,
+    },
+  }
+
+  return (
+    <Carousel responsive={responsive}>
+      {bookList.map((book, i) => (
+        <Card
+          delay={i}
+          key={i}
+          book={{
+            ...book,
+            category: '',
+          }}
+        />
+      ))}
+    </Carousel>
+  )
 }
