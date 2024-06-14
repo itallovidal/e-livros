@@ -54,7 +54,7 @@ export function ProfileBookList({
   }
 
   return (
-    <Carousel responsive={responsive}>
+    <Carousel responsive={responsive} className={'carouselBooks'}>
       {bookList.map((book, i) => (
         <Card
           delay={i}

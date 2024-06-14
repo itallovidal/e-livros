@@ -38,31 +38,17 @@ export const Section = styled('section', {
   flexDirection: 'column',
   width: 'calc((21rem * 3) + 2rem)',
   margin: '2rem auto',
-})
 
-export const ContainerBooks = styled('div', {
-  position: 'relative',
-  display: 'flex',
+  '.carouselBooks': {
+    position: 'static',
 
-  '.btnLeft, .btnRight': {
-    position: 'absolute',
-    top: '50%',
-    padding: '0.5rem',
+    '.react-multiple-carousel__arrow--left ,.react-multiple-carousel__arrow--right':
+      {
+        backgroundColor: '$colorOne',
+
+        '&:hover': {
+          opacity: 0.4,
+        },
+      },
   },
-
-  '.btnLeft': {
-    left: '-40px',
-  },
-
-  '.btnRight': {
-    right: '-40px',
-  },
-})
-
-export const DivBooks = styled('div', {
-  display: 'flex',
-  alignItems: 'center',
-  gap: '1rem',
-  overflowX: 'auto',
-  scrollbehavior: 'smooth',
 })
