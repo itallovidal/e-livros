@@ -39,16 +39,12 @@ export const Section = styled('section', {
   width: 'calc((21rem * 3) + 2rem)',
   margin: '2rem auto',
 
-  '.carouselBooks': {
-    position: 'static',
+  '.react-multiple-carousel__arrow--left ,.react-multiple-carousel__arrow--right':
+    {
+      backgroundColor: '$colorOne',
 
-    '.react-multiple-carousel__arrow--left ,.react-multiple-carousel__arrow--right':
-      {
-        backgroundColor: '$colorOne',
-
-        '&:hover': {
-          opacity: 0.4,
-        },
+      '&:hover': {
+        opacity: 0.4,
       },
-  },
+    },
 })

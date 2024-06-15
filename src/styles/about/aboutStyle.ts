@@ -40,6 +40,7 @@ export const BookDetailsContainer = styled('div', {
   img: {
     marginRight: '1rem',
     borderRadius: '10px',
+    width: '20rem',
   },
 
   p: {

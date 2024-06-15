@@ -56,6 +56,7 @@ export const CategoryContainer = styled('div', {
 
   h1: {
     textAlign: 'right',
+    margin: '0px',
   },
 })
 
