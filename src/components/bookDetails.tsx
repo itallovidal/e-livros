@@ -1,6 +1,4 @@
 import { BookDetailsContainer } from '../styles/about/aboutStyle.ts'
-import { Button } from './button.tsx'
-import { BookBookmark } from 'phosphor-react'
 import { IBookDetails } from '../@types/openLibary'
 import { ReadBookButton } from './readBookButton.tsx'
 import { useContext, useEffect, useState } from 'react'
@@ -65,11 +63,6 @@ export function BookDetails() {
         )}
 
         <div className={'container_btns'}>
-          <Button variant={'blue'}>
-            Reservar
-            <BookBookmark size={32} />
-          </Button>
-
           <ReadBookButton id={id} isAlreadyRead={book.isRead} />
           <FavoriteBookButton id={id} isAlreadyFavorite={book.isFavorite} />
         </div>

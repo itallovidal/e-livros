@@ -42,7 +42,7 @@ function Login() {
 
   return (
     <main>
-      <FormHeader title={'Login'} subtitle={'Boook, favorite, discover!'} />
+      <FormHeader title={'Login'} subtitle={'Welcome back!'} />
 
       <Form onSubmit={handleSubmit(handleLogin)}>
         <FormInput<ILoginSchema>

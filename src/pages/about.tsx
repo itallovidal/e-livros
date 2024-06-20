@@ -17,5 +17,3 @@ export function About() {
     </>
   )
 }
-
-// {show && <Booking img={book.img} title={book.title} mod={Modify} />}
