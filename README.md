@@ -1,18 +1,16 @@
-# Páginas
+# Setup do Projeto
+Para que tudo rode perfeitamente precisamos instalar e configurar algumas coisas.
 
-[ x ] home
-[ x ] pesquisa
-[ x ] sobre o livro
-[ X ] perfil
+### Baixe as dependências
+Para baixar as dependências necessárias para o projeto, utilize:
 
-# Funcionalidades
+```bash
+npm install
+```
 
-[ x ] o usuário deve conseguir pesquisar um livro
+### Rodando o projeto
+Para startar o projeto basta executar o comando abaixo.
+```bash
+npm run dev
+```
 
-[ x ] o usuário deve conseguir fazer o login
-
-[ x ] o usuário deve conseguir se cadastrar
-
-[ X ] o usuário deve conseguir marcar o livro como lido
-
-[ X ] o usuário deve conseguir favoritar um livro

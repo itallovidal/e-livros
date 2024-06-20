@@ -12,9 +12,7 @@ function NotFoundPage() {
   const navigate = useNavigate()
 
   useEffect(() => {
-    setTimeout(() => {
-      navigate('/architecture?offset=1')
-    }, 3000)
+    navigate('/architecture?offset=1')
   })
 
   return (

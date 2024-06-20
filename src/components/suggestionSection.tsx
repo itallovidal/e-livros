@@ -18,7 +18,7 @@ export function SuggestionSection({ name }: ICardSection) {
   const [booksData, setBooks] = useState<IBookData>({} as IBookData)
 
   async function fetchSuggestionBooks() {
-    const books = await fetchBooks(category, 100, 3)
+    const books = await fetchBooks(category, 10, 3)
 
     setBooks({
       books_count: books.work_count,
