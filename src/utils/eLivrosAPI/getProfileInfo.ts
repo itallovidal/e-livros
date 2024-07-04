@@ -8,5 +8,6 @@ export async function getProfileInfo(token: string): Promise<IProfile> {
     },
   })
 
+
   return await response.json()
 }

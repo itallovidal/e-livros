@@ -27,6 +27,7 @@ function Profile() {
       setLoading(true)
       getProfileInfo(user.accessToken)
         .then((data) => {
+          console.log(data)
           setProfile(data)
         })
         .finally(() => setLoading(false))
